@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Notes</title>
+	</head>
+	<body>
+		<div class="box">
+		<div>
+				<a href="add"><button>New Note</button></a>
+			</div>
+			<div class="myTopic">
+				<table>
+						<tr>
+
+							<td><%=  result.rows[i].id  %></td>
+							<td><%=  result.rows[i].topic  %></td>
+							<td><%=  result.rows[i].note  %></td>
+
+						</tr>
+						<div>
+						<tr>
+							<form method='GET' action='/edit/myblog/<%= result.rows[i].id %>' >
+							<td><button>  Edit  </button></td>
+							</form>
+							<form method='POST' action='/delete/myblog/<%= result.rows[i].id %>' >
+							<td><button>  Delete  </button></td>
+							</form>
+						</tr>
+					</div>
+					<% } %>
+
+				</table>
+			</div>
+	</body>
+</html>
